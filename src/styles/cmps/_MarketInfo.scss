@@ -1,1 +1,26 @@
-// 
+.market-info {
+    &.watched {
+        background: linear-gradient(270deg, #834e1f, $clr1);
+    }
+    div {
+        width: 10ch;
+        &:nth-child(even) {
+            justify-content: flex-end;
+        }
+    }
+    .market-change {
+        &.red {
+            span {
+                color: #ff3d3d;
+            }
+        }
+        &.green {
+            span {
+                color: #00d424;
+            }
+        }
+    }
+    .market-star {
+        cursor: pointer;
+    }
+}

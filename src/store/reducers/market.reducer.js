@@ -1,10 +1,10 @@
 const initialState = {
     markets: [],
-    market: null,
+    watchlist: new Set(),
 }
 export function marketReducer(state = initialState, action) {
     var newState = state;
-    var markets;
+    var watchlist;
     switch (action.type) {
         case 'FILTER_MARKET':
             newState = { ...state, market: action.market }
@@ -12,9 +12,10 @@ export function marketReducer(state = initialState, action) {
         case 'SET_MARKETS':
             newState = { ...state, markets: action.markets }
             break;
-        case 'SET_MARKET':
-            markets = state.markets.map(market => market._id !== action.market._id ? market : action.market)
-            newState = { ...state, markets, market: action.market }
+        case 'SET_WATCHLIST':
+            watchlist = new Set(state.watchlist)
+            watchlist.has(action.asset) ? watchlist.delete(action.asset) : watchlist.add(action.asset)
+            newState = { ...state, watchlist }
             break;
         default:
     }

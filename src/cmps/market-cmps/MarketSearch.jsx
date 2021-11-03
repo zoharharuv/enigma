@@ -4,14 +4,18 @@ import { memo } from 'react'
 export const MarketSearch = memo(function _MarketSearch({ filterBy, handleChange }) {
     return (
         <section className="market-search">
-            <div className="search-bar">
-                <Input
-                    onChange={handleChange}
-                    value={filterBy}
-                    type="text"
-                    placeholder="Search all markets"
-                    autoComplete="off" />
-            </div>
+            <Input
+                style={{
+                    textTransform: 'unset',
+                    fontFamily: 'monospace',
+                    color: '#ffffff',
+                    background: '#1c2663',
+                    padding: '5px 10px'
+                }}
+                onChange={handleChange}
+                value={filterBy}
+                placeholder="Search all markets"
+                autoComplete="off" />
         </section>
     )
 })

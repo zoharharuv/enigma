@@ -17,3 +17,13 @@ export function loadMarkets(market, filterBy = null) {
         }
     }
 }
+
+export function toggleMarket({ asset }) {
+    return async dispatch => {
+        try {
+            dispatch({ type: 'SET_WATCHLIST', asset })
+        } catch (err) {
+            console.log('marketActions: err in SET_WATCHLIST', err)
+        }
+    }
+}
