@@ -6,6 +6,6 @@ async function getKrakenMarket() {
 }
 
 
-export const marketService = {
+export const krakenService = {
     getKrakenMarket
 }

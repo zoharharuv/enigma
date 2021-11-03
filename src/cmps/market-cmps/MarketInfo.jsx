@@ -1,16 +1,12 @@
-import arrow from '../../assets/img/arrow-right.svg'
-import active from '../../assets/img/active.svg'
-
-export function MarketPreview({ market, selectedMarket, onSelectMarket }) {
-    const isActive = market.id === selectedMarket?.id;
+export function MarketInfo({ market }) {
     return (
-        <section className={`market-preview flex align-center space-between ${isActive ? 'active' : ''}`}
-            onClick={() => onSelectMarket(market)}>
-            <div className="market-title align-center flex">
-                <img src={active} alt="active" />
-                <span>{market.name}</span>
-            </div>
-            <img src={arrow} alt="arrow" />
+        <section className="market-info flex align-center space-between">
+            {Object.keys(market).map(key =>
+                <div key={key} className={`market-${key} align-center flex`}>
+                    <span>{market[key]}</span>
+                </div>
+            )}
+            <span className="market-star">⭐</span>
         </section>
     )
 }
