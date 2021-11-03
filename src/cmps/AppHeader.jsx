@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Button } from '@material-ui/core';
 import { MarketSearch } from './market-cmps/MarketSearch';
 
-export const AppHeader = memo(function _AppHeader() {
+export const AppHeader = memo(() => {
     const routes = [
         {
             path: '/market/btc',
@@ -19,7 +19,7 @@ export const AppHeader = memo(function _AppHeader() {
         }
     ]
     return (
-        <header className="app-header flex column">
+        <header className="app-header flex column gap">
 
             <nav className="flex align-center gap">
                 {routes.map(route =>

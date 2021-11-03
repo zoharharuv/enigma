@@ -4,7 +4,6 @@ import routes from './routes.js'
 import { AppHeader } from './cmps/AppHeader';
 
 export function App() {
-
   return (
     <section className="app flex column">
       <AppHeader />

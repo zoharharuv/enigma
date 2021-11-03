@@ -140,18 +140,38 @@
     ]
   },
   "krakenMarkets": {
-    "XRP": [
+    "ETH": [
       {
-        "asset": "XRPAUD",
-        "lastPrice": 1.55,
-        "change": -0.57,
-        "volume": "121.8K"
+        "asset": "ETHAUD",
+        "lastPrice": 929.99,
+        "change": -0.05,
+        "volume": "7.58"
       },
       {
-        "asset": "XRPBTC",
-        "lastPrice": 0.00002354,
-        "change": 0.43,
-        "volume": "824.6K"
+        "asset": "ETHBTC",
+        "lastPrice": 0.01347,
+        "change": -3.37,
+        "volume": "155.61"
+      },
+      {
+        "asset": "ETHETH",
+        "lastPrice": 0.204,
+        "change": -3.32,
+        "volume": "64.78"
+      }
+    ],
+    "BNB": [
+      {
+        "asset": "BNBEUR",
+        "lastPrice": 145.99,
+        "change": -3.0,
+        "volume": "9.364K"
+      },
+      {
+        "asset": "BNBGPB",
+        "lastPrice": 124.91,
+        "change": -3.05,
+        "volume": "261.35"
       }
     ]
   }

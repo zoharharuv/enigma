@@ -1,6 +1,7 @@
 const initialState = {
     markets: [],
     watchlist: new Set(),
+    filterBy: ''
 }
 export function marketReducer(state = initialState, action) {
     var newState = state;
@@ -11,6 +12,9 @@ export function marketReducer(state = initialState, action) {
             break;
         case 'SET_MARKETS':
             newState = { ...state, markets: action.markets }
+            break;
+        case 'SET_FILTER':
+            newState = { ...state, filterBy: action.filterBy }
             break;
         case 'SET_WATCHLIST':
             watchlist = new Set(state.watchlist)

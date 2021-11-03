@@ -1,4 +1,6 @@
 .market-info {
+    background: $clr1;
+    transition: all 0.2s;
     &.watched {
         background: linear-gradient(270deg, #834e1f, $clr1);
     }
@@ -6,6 +8,11 @@
         width: 10ch;
         &:nth-child(even) {
             justify-content: flex-end;
+        }
+        @include for-mobile-layout {
+            &:nth-child(2) {
+                padding-inline-end: 1rem;
+            }
         }
     }
     .market-change {

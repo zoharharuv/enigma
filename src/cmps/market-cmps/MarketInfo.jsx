@@ -1,8 +1,9 @@
+import { useMemo } from 'react';
 import { useDispatch, useSelector } from "react-redux"
 import { Star } from "@material-ui/icons"
 import { toggleMarket } from "../../store/actions/market.actions"
 
-export function MarketInfo({ market }) {
+export const MarketInfo = ({ market }) => {
     const { watchlist } = useSelector(state => state.marketModule)
     const dispatch = useDispatch()
 
@@ -10,7 +11,10 @@ export function MarketInfo({ market }) {
         dispatch(toggleMarket(market))
     }
 
-    const isWatched = watchlist.has(market.asset);
+    const isWatched = useMemo(() => {
+        return watchlist.has(market.asset);
+    }, [watchlist])
+
     return (
         <section className={`market-info flex align-center space-between ${isWatched ? 'watched' : ''}`}>
             {Object.keys(market).map(key =>
@@ -29,3 +33,7 @@ export function MarketInfo({ market }) {
         </section>
     )
 }
+
+
+
+

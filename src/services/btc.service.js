@@ -1,7 +1,7 @@
 import { databaseService } from './database.service';
 
 async function getBtcMarket() {
-    const { btcMarkets } = await databaseService.query();
+    let { btcMarkets } = await databaseService.query();
     return btcMarkets;
 }
 
